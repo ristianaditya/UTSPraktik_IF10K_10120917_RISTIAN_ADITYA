@@ -1,3 +1,8 @@
+//Tanggal Pengerjaan : 30/05/2023
+//NIM : 10120917
+//Nama : Ristian Aditya
+//Kelas : IF-10
+
 package com.example.utspraktik_if10k_10120917_ristianaditya
 
 import androidx.appcompat.app.AppCompatActivity

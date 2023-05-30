@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--    Tanggal Pengerjaan : 30/05/2023-->
+<!--    NIM : 10120917-->
+<!--    Nama : Ristian Aditya-->
+<!--    Kelas : IF-10-->
+
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
