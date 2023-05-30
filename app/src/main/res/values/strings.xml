@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">UTSPraktik-IF10K-10120917-RistianAditya</string>
+    <string name="title_pelaksanaan">Pelaksanaan PPDB Tahap 1 - 2023</string>
+    <string name="detail">Detail</string>
+    <string name="persiapan">Persiapan</string>
+    <string name="time">17 Mei - 05 Juni 2023</string>
+    <string name="pengumuman">Pengumuman Hasil Seleksi</string>
+    <string name="diterima">Anda dinyatakan diterima di</string>
+    <string name="sma">SMA Negeri 1 Bojonggede</string>
+    <string name="prestasi">Jalur Prestasi Kejuaraan</string>
+    <string name="layanan">Layanan PPDB</string>
+    <string name="kota">Kota Bandung</string>
+    <string name="sekolah">Info Sekolah PPDB</string>
+    <string name="sosialisasi">Sosialisasi PPDB</string>
+    <string name="pendaftaran">Pendaftaran PPDB Tahap 1</string>
+    <string name="pengumuman_ppdb">Pengumuman PPDB Tahap 1</string>
+    <string name="hotline">Hotline</string>
+    <string name="berita">Berita Terkait PPDB</string>
+    <string name="beritaInformasi">Dapatkan semua informasi terbaru dan terpopuler terkait PPDB</string>
+    <string name="beritaSatu">PPDB SMA/ SMK 2022, Ridwan \nKamil: PPDB di Jawa Barat...</string>
+    <string name="beritaDua">Persiapan PPDB Jabar Tahun \n2021 Sudah Matang</string>
+    <string name="beritaTiga">Pelaksana Teknis PPDB Harus \nEvaluasi Diri</string>
+    <string name="beritaKeempat">Masih ditemukan Blank Spot \ndalam Proses PPDB Kabupaten</string>
+    <string name="beritaKelima">Bupati Purwakarta Hadiri \nPembukaan Masa Pengenalan</string>
+    <string name="terpopuler">Terpopuler</string>
+    <string name="terbaru">Terbaru</string>
+    <string name="pendidikan">Pendidikan</string>
+    <string name="_15_jam_yang_lalu">15 Jam yang lalu</string>
+    <string name="_4_juni_2022">4 Juni 2022</string>
+    <string name="_24_mei_2022">24 Mei 2022</string>
+    <string name="_19_juli_2022">19 Juli 2022</string>
+    <string name="lihat_semua_berita">Lihat semua berita</string>
+    <string name="kembali_ke_atas">Kembali ke atas</string>
+</resources>

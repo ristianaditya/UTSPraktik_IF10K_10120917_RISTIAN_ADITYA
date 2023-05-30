@@ -1,0 +1,1223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.01" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageBanner"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_180dp"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+            app:srcCompat="@drawable/banner" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintPelaksanaan"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_150dp"
+            android:layout_marginTop="@dimen/_12dp"
+            android:background="@drawable/shape_card"
+            android:padding="@dimen/_15dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/imageBanner">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintTitlePelaksanaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/title_pelaksanaan"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonDetail"
+                    android:layout_width="@dimen/_70dp"
+                    android:layout_height="@dimen/_35dp"
+                    android:backgroundTint="@color/lightGreen"
+                    android:fontFamily="@font/lato_bold"
+                    android:insetRight="@dimen/_0dp"
+                    android:paddingStart="@dimen/_8dp"
+                    android:paddingEnd="@dimen/_8dp"
+                    android:text="@string/detail"
+                    android:textAllCaps="false"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/textSize_10sp"
+                    app:cornerRadius="@dimen/_20dp"
+                    app:icon="@drawable/icon"
+                    app:iconGravity="textStart"
+                    app:iconSize="@dimen/_12dp"
+                    app:iconTint="@color/green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/sliderConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintTitlePelaksanaan">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageChek"
+                    android:layout_width="@dimen/_12dp"
+                    android:layout_height="@dimen/_12dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/check_green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/lineGreen"
+                    android:layout_width="@dimen/_250dp"
+                    android:layout_height="@dimen/_1dp"
+                    android:background="@color/green"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageChek"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageChekEnd"
+                    android:layout_width="@dimen/_12dp"
+                    android:layout_height="@dimen/_12dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/check_end_green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lineGreen"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/lineGrey"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_1dp"
+                    android:background="@color/grey"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageChekEnd"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sliderConstraint">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageProfile"
+                    android:layout_width="@dimen/_40dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_profile"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/linearPersiapan"
+                    android:layout_width="@dimen/_210dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_15dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageProfile"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_4dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="@string/persiapan"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize_14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/time"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize_12sp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageDoc"
+                    android:layout_width="@dimen/_40dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_doc"
+                    app:layout_constraintStart_toEndOf="@+id/linearPersiapan"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintPengumuman"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:background="@drawable/shape_card"
+            android:padding="@dimen/_15dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/constraintPelaksanaan">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imagePengumuman"
+                android:layout_width="@dimen/_32dp"
+                android:layout_height="@dimen/_32dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:src="@drawable/pengumuman"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titlePengumuman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:text="@string/pengumuman"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize_16sp"
+                app:fontFamily="@font/roboto_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imagePengumuman" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detailPengumuman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12dp"
+                android:background="@drawable/shape_card_green"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titlePengumuman">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintTitlePengumumam"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_28dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textLulus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/diterima"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/textSize_12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonDetailPengumuman"
+                        android:layout_width="@dimen/_70dp"
+                        android:layout_height="35dp"
+                        android:backgroundTint="@color/green"
+                        android:fontFamily="@font/lato_bold"
+                        android:insetRight="@dimen/_0dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/detail"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textSize_10sp"
+                        app:cornerRadius="@dimen/_20dp"
+                        app:icon="@drawable/icon"
+                        app:iconGravity="textStart"
+                        app:iconSize="@dimen/_12dp"
+                        app:iconTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/textSma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/sma"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintStart_toStartOf="@+id/constraintTitlePengumumam"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintTitlePengumumam" />
+
+                <TextView
+                    android:id="@+id/textPrestasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/prestasi"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textSma" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayanan"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:background="@drawable/shape_card"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/constraintPengumuman">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/headPengumuman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageLayanan"
+                    android:layout_width="@dimen/_32dp"
+                    android:layout_height="@dimen/_32dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:src="@drawable/layanan"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleLayanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12dp"
+                    android:text="@string/layanan"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSize_16sp"
+                    app:fontFamily="@font/roboto_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageLayanan" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageLocation"
+                    android:layout_width="@dimen/_8dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/lokasi"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleLayanan" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titlelokasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:text="@string/kota"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:fontFamily="@font/lato_regular"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageLocation"
+                    app:layout_constraintStart_toEndOf="@+id/imageLocation"
+                    app:layout_constraintTop_toTopOf="@+id/imageLocation" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardSekolah"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80dp"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headPengumuman">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageSekolah"
+                    android:layout_width="@dimen/_46dp"
+                    android:layout_height="@dimen/_46dp"
+                    android:src="@drawable/sekolah"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/descSekolah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/sekolah"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageSekolah"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageArrow"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/lineSekolah"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardSekolah" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardSosialisasi"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80dp"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineSekolah">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageSosialisasi"
+                    android:layout_width="@dimen/_46dp"
+                    android:layout_height="@dimen/_46dp"
+                    android:src="@drawable/sosialisasi"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/descSosialisasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/sosialisasi"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageSosialisasi"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageArrowSosialisasi"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/lineSosialisasi"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardSosialisasi" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardPendaftaran"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80dp"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineSosialisasi">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imagePendaftaran"
+                    android:layout_width="@dimen/_46dp"
+                    android:layout_height="@dimen/_46dp"
+                    android:src="@drawable/pendaftaran"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/descPendaftaran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/pendaftaran"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imagePendaftaran"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageArrowPendaftaran"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/linePendaftaran"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardPendaftaran" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardPengumumanPpdb"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80dp"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linePendaftaran">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imagePengumumanPpdb"
+                    android:layout_width="@dimen/_46dp"
+                    android:layout_height="@dimen/_46dp"
+                    android:src="@drawable/pengumuman_ppdb"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/descPengumumanPpdb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/pengumuman_ppdb"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imagePengumumanPpdb"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageArrowPengumumanPpdb"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/linePengumumanPpdb"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardPengumumanPpdb" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardHotline"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80dp"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linePengumumanPpdb">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageHotline"
+                    android:layout_width="@dimen/_46dp"
+                    android:layout_height="@dimen/_46dp"
+                    android:src="@drawable/hotline"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/descHotline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/hotline"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageHotline"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageArrowHotline"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintBerita"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:background="@drawable/shape_card"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayanan">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintTitleBerita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageBerita"
+                    android:layout_width="@dimen/_32dp"
+                    android:layout_height="@dimen/_32dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:src="@drawable/pengumuman"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleBerita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12dp"
+                    android:text="@string/berita"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSize_16sp"
+                    app:fontFamily="@font/roboto_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageBerita" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/detailBerita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8dp"
+                    android:text="@string/beritaInformasi"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:fontFamily="@font/lato_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleBerita" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintBeritaKategori"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:background="@drawable/shape_card_grey"
+                    android:padding="@dimen/_5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detailBerita">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="@dimen/_160dp"
+                        android:layout_height="@dimen/_40dp"
+                        android:background="@drawable/shape_card"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textTerbaru"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_20dp"
+                            android:fontFamily="@font/lato_bold"
+                            android:text="@string/terbaru"
+                            android:textColor="@color/green"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_10dp"
+                            android:layout_height="@dimen/_10dp"
+                            android:layout_marginStart="@dimen/_10dp"
+                            android:src="@drawable/dot_red"
+                            app:layout_constraintBottom_toBottomOf="@+id/textTerbaru"
+                            app:layout_constraintStart_toEndOf="@+id/textTerbaru"
+                            app:layout_constraintTop_toTopOf="@+id/textTerbaru" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="@string/terpopuler"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintBeritaPertama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintTitleBerita">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_beria_pertama"
+                    android:layout_width="@dimen/_60dp"
+                    android:layout_height="@dimen/_60dp"
+                    android:src="@drawable/image_berita"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/judul_berita_pertama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/beritaSatu"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_pertama"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pendidikan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/pendidikan"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_pertama"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_pertama" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ellpise"
+                    android:layout_width="@dimen/_3dp"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:src="@drawable/ellipse"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pendidikan"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_pertama" />
+
+                <TextView
+                    android:id="@+id/pendidikanPerJam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/_15_jam_yang_lalu"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ellpise"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_pertama" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/next_berita_pertama"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/lineBeritaPertama"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintBeritaPertama" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintBeritaKedua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineBeritaPertama">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_beria_kedua"
+                    android:layout_width="@dimen/_60dp"
+                    android:layout_height="@dimen/_60dp"
+                    android:src="@drawable/image_berita"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/judul_berita_kedua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/beritaDua"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_kedua"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pendidikanKedua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/pendidikan"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_kedua"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_kedua" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ellpiseKedua"
+                    android:layout_width="@dimen/_3dp"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:src="@drawable/ellipse"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pendidikanKedua"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_kedua" />
+
+                <TextView
+                    android:id="@+id/pendidikanPerJamKedua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/_4_juni_2022"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ellpiseKedua"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_kedua" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/next_berita_kedua"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/lineBeritaKedua"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintBeritaKedua" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintBeritaKetiga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineBeritaKedua">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_beria_ketiga"
+                    android:layout_width="@dimen/_60dp"
+                    android:layout_height="@dimen/_60dp"
+                    android:src="@drawable/image_berita"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/judul_berita_ketiga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/beritaTiga"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_ketiga"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pendidikanKetiga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/pendidikan"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_ketiga"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_ketiga" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ellpiseKetiga"
+                    android:layout_width="@dimen/_3dp"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:src="@drawable/ellipse"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pendidikanKetiga"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_ketiga" />
+
+                <TextView
+                    android:id="@+id/pendidikanPerJamKetiga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/_24_mei_2022"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ellpiseKetiga"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_ketiga" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/next_berita_ketiga"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/lineBeritaKetiga"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintBeritaKetiga" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintBeritaKeempat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineBeritaKetiga">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_beria_keempat"
+                    android:layout_width="@dimen/_60dp"
+                    android:layout_height="@dimen/_60dp"
+                    android:src="@drawable/image_berita"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/judul_berita_keempat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/beritaKeempat"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_keempat"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pendidikanKeempat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/pendidikan"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_keempat"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_keempat" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ellpiseKeempat"
+                    android:layout_width="@dimen/_3dp"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:src="@drawable/ellipse"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pendidikanKeempat"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_keempat" />
+
+                <TextView
+                    android:id="@+id/pendidikanPerJamKeempat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/_24_mei_2022"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ellpiseKeempat"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_keempat" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/next_berita_keempat"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/lineBeritaKeempat"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintBeritaKeempat" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintBeritaKelima"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineBeritaKeempat">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_beria_kelima"
+                    android:layout_width="@dimen/_60dp"
+                    android:layout_height="@dimen/_60dp"
+                    android:src="@drawable/image_berita"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/judul_berita_kelima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/beritaKelima"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_kelima"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pendidikanKelima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/pendidikan"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image_beria_kelima"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_kelima" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ellpiseKelima"
+                    android:layout_width="@dimen/_3dp"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:src="@drawable/ellipse"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pendidikanKelima"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_kelima" />
+
+                <TextView
+                    android:id="@+id/pendidikanPerJamKelima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/_19_juli_2022"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ellpiseKelima"
+                    app:layout_constraintTop_toBottomOf="@+id/judul_berita_kelima" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/next_berita_kelima"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/lineBeritaKelima"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintBeritaKelima" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintBottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:paddingStart="@dimen/_15dp"
+                android:paddingEnd="@dimen/_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/lineBeritaKelima">
+
+                <TextView
+                    android:id="@+id/textBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/lihat_semua_berita"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/textSize_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15dp"
+            android:layout_marginBottom="@dimen/_15dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/kembali_ke_atas"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
+            android:textSize="@dimen/textSize_12sp"
+            app:cornerRadius="@dimen/_20dp"
+            app:icon="@drawable/keatas"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/_12dp"
+            app:iconTint="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintBerita" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
